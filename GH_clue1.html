@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Clue 1 of 3 · Language Services</title>
+<style>
+  :root {
+    --bg: #faf6f2;
+    --card: #ffffff;
+    --border: #ecd9c9;
+    --text: #2a1f1a;
+    --muted: #6b5a52;
+    --accent: #8a3550;
+    --accentBg: #fbeaf1;
+    --coral: #d4489f;
+    --lavender: #9b7bc7;
+    --mint: #5fb8a8;
+    --gold: #d4a850;
+    --peach: #e89a7e;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; position: relative; overflow: hidden; }
+  .bg-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; pointer-events: none; }
+  .orb1 { width: 360px; height: 360px; background: var(--coral); top: -80px; left: -80px; }
+  .orb2 { width: 420px; height: 420px; background: var(--lavender); bottom: -120px; right: -100px; }
+  .orb3 { width: 280px; height: 280px; background: var(--gold); top: 40%; right: 20%; opacity: 0.18; }
+  .card { position: relative; z-index: 2; background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 56px 52px; max-width: 640px; width: 100%; box-shadow: 0 30px 80px rgba(138, 53, 80, 0.12), 0 8px 24px rgba(138, 53, 80, 0.06); text-align: center; animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accentBg); color: var(--accent); border: 1px solid #f4d6e3; border-radius: 999px; padding: 8px 16px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+  .eyebrow { font-size: 13px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; }
+  h1 { font-size: 42px; font-weight: 900; letter-spacing: -1.2px; line-height: 1.05; margin: 0 0 14px; }
+  .subtitle { font-size: 15px; color: var(--muted); margin: 0 0 36px; line-height: 1.6; }
+  .clue-frame { position: relative; background: linear-gradient(135deg, #fff8ee 0%, #fbeaf1 100%); border: 1px dashed #e8c3b0; border-radius: 20px; padding: 36px 28px; margin: 0 0 36px; }
+  .clue-frame::before, .clue-frame::after { content: "\201C"; position: absolute; font-family: Georgia, serif; font-size: 90px; color: rgba(138, 53, 80, 0.15); line-height: 1; }
+  .clue-frame::before { top: -8px; left: 18px; }
+  .clue-frame::after { content: "\201D"; bottom: -46px; right: 18px; }
+  .clue-text { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-style: italic; line-height: 1.5; color: var(--text); margin: 0; }
+  .clue-text em { font-style: italic; font-weight: 700; color: var(--accent); }
+  .progress { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 28px; }
+  .pip { width: 34px; height: 6px; border-radius: 3px; background: #e9d6c5; }
+  .pip.active { background: var(--accent); box-shadow: 0 0 12px rgba(138, 53, 80, 0.4); }
+  .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .signature { text-align: left; font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .signature strong { color: var(--text); display: block; font-size: 13px; font-weight: 800; }
+  .next { font-size: 11px; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; text-align: right; }
+  @media (max-width: 560px) {
+    .card { padding: 40px 28px; border-radius: 22px; }
+    h1 { font-size: 32px; }
+    .clue-text { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="bg-orb orb3"></div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span> Clue 1 of 3</div>
+      <div class="eyebrow">Wednesday, April 28</div>
+      <h1>Something new is coming.</h1>
+      <p class="subtitle">The team name for our newly unified language teams has been chosen, and the reveal is underway. Over the next three days, we will share one clue per day. Each clue points to the same word. On Friday, you will use the word you have guessed to unlock the official name reveal.</p>
+
+      <div class="clue-frame">
+        <p class="clue-text">
+          It is <em>built</em>.<br/>
+          Its purpose is <em>connection</em>.
+        </p>
+      </div>
+
+      <div class="progress">
+        <div class="pip active"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+      </div>
+
+      <div class="footer">
+        <div class="signature">
+          <strong>The Unity Committee</strong>
+          Language Services · Advocate Health
+        </div>
+        <div class="next">Clue 2 · Thursday, April 29 &rarr;</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
